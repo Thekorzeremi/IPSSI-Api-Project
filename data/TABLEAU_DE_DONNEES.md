@@ -1,4 +1,5 @@
 # Tableau de données
+Ce tableau de données permet de se représenter de manière hypothétique les données nécessaires au bon fonctionnemenet de notre application.
 ## USERS
 - id AUTO_INCREMENT
 - username STRING

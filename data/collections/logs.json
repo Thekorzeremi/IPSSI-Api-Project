@@ -1,0 +1,7 @@
+{
+  "_id": { "$oid": "507f1f77bcf86cd799439019" },
+  "createdAt": { "$date": "2026-03-12T11:35:00.000Z" },
+  "message": "Article 'iPhone 15 Pro Max Review' approuvé par admin",
+  "url": "/admin/articles/507f1f77bcf86cd799439012",
+  "userId": { "$oid": "507f1f77bcf86cd799439020" }
+}
