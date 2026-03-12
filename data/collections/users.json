@@ -1,6 +1,7 @@
 {
   "_id": { "$oid": "507f1f77bcf86cd799439011" },
   "username": "john_doe",
+  "email": "john@doe.com",
   "password": "$2b$10$hashedPasswordHere",
   "createdAt": { "$date": "2026-03-12T10:00:00.000Z" },
   "updatedAt": { "$date": "2026-03-12T10:00:00.000Z" },

@@ -4,6 +4,12 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
+    email: {
+        type: String,
+        required: true,
+        match: /@/
+    },
+
     password: {
         type: String,
         required: true
@@ -26,7 +32,9 @@ const userSchema = new mongoose.Schema({
 
     reputation: {
         type: Number,
-        default: 0
+        default: 0,
+        min: 0,
+        max: 100000
     }
 });
 

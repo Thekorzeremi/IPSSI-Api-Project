@@ -3,6 +3,7 @@ Ce tableau de données permet de se représenter de manière hypothétique les d
 ## USERS
 - id AUTO_INCREMENT
 - username STRING
+- email STRING
 - password STRING
 - created_at DATETIME IMMUTABLE
 - updated_at DATETIME

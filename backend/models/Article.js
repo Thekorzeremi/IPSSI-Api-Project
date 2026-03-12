@@ -16,7 +16,9 @@ const articleSchema = new mongoose.Schema({
 
     score: {
         type: Number,
-        default: 0
+        default: 0,
+        min: 0,
+        max: 10000
     },
 
     status: {
