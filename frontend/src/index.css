@@ -47,7 +47,9 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0rem;
+  --retro-accent: #ffe600;
+  --retro-shadow: 4px 4px 0px oklch(0.145 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -121,5 +123,18 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .retro-shadow {
+    box-shadow: var(--retro-shadow);
+  }
+  .retro-shadow-accent {
+    box-shadow: 4px 4px 0px var(--retro-accent);
+  }
+  .font-retro {
+    font-family: ui-monospace, "Courier New", monospace;
   }
 }
