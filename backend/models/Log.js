@@ -1,18 +1,12 @@
-const logSchema = new mongoose.Schema({
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
+const mongoose = require("mongoose");
 
-    message: {
-        type: String,
-        required: true
-    },
+const logSchema = new mongoose.Schema(
+  {
+    message: { type: String, required: true, trim: true },
+    url: { type: String },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  },
+  { timestamps: { createdAt: true, updatedAt: false } },
+);
 
-    url: {
-        type: String,
-        required: false
-    }
-});
-
-const Log = mongoose.model('Log', logSchema);
+module.exports = mongoose.model("Log", logSchema);

@@ -1,41 +1,23 @@
-const userSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true
-    },
+const mongoose = require("mongoose");
 
+const userSchema = new mongoose.Schema(
+  {
+    username: { type: String, required: true, trim: true },
     email: {
-        type: String,
-        required: true,
-        match: /@/
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      match: /@/,
     },
-
-    password: {
-        type: String,
-        required: true
+    password: { type: String, required: true },
+    roles: { type: [String], default: ["ROLE_USER"] },
+    reputation: { type: Number, default: 0, min: 0, max: 100000 },
+    settings: {
+      newsletter: { type: Boolean, default: false },
     },
+  },
+  { timestamps: true },
+);
 
-    created_at: {
-        type: Date,
-        default: Date.now
-    },
-
-    updated_at: {
-        type: Date,
-        default: Date.now
-    },
-
-    roles: {
-        type: Array,
-        required: true
-    },
-
-    reputation: {
-        type: Number,
-        default: 0,
-        min: 0,
-        max: 100000
-    }
-});
-
-const User = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);

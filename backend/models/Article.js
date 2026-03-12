@@ -1,41 +1,29 @@
-const articleSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
-    },
+const mongoose = require("mongoose");
 
-    image: {
-        type: String,
-        required: false
-    },
+const commentSchema = new mongoose.Schema(
+  {
+    authorId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    content: { type: String, required: true, trim: true },
+    score: { type: Number, default: 0, min: 0, max: 10000 },
+  },
+  { timestamps: true },
+);
 
-    content: {
-        type: String,
-        required: false
-    },
-
-    score: {
-        type: Number,
-        default: 0,
-        min: 0,
-        max: 10000
-    },
-
+const articleSchema = new mongoose.Schema(
+  {
+    title: { type: String, required: true, trim: true },
+    authorId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    image: { type: String },
+    content: { type: String },
+    score: { type: Number, default: 0, min: 0, max: 10000 },
     status: {
-        type: String,
-        enum: ['created', "removed", "drafted", 'published'],
-        required: true
+      type: String,
+      enum: ["created", "removed", "drafted", "published", "approved"],
+      required: true,
     },
+    comments: { type: [commentSchema], default: [] },
+  },
+  { timestamps: true },
+);
 
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    }
-});
-
-const Article = mongoose.model('Article', articleSchema);
+module.exports = mongoose.model("Article", articleSchema);
