@@ -19,8 +19,13 @@ Il s'agit d'un blog dédié à Apple avec une partie forum et une partie article
 
 Dans notre cas précis, nous aurons besoin de plusieurs collections :
 - Users avec réputations / paramètres
-- Articles
+- Articles avec commentaires et score
 - Log / events
-- Sujet avec messages / posts
+- Threads avec messages / posts
 
 De fait, nous aurons besoin d'un CRUD global.
+
+Le système de réputation reposerait sur un système de notation par points :
+- Pour chaque message publié par l'utilisateur, si son message est upvotre au dessus d'un certain seuil (disons 5), alors celui-ci remporte des points.
+- Pour chaque article publié et approuvé par les gestionnaires du site web dans la partie articles du site, alors l'utilisateur gagne également des points.
+- Par contre, si l'utilisateur retrouve un de ses messages signalés, alors il perd des points.
