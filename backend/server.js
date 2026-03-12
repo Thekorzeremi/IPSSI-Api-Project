@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '.env.local', override: true });
+require('dotenv').config({ path: '.env.local' });
 const express = require('express');
 const connectDB = require('./config/database');
 
