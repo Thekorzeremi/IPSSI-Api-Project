@@ -1,6 +1,31 @@
-import { Link } from "react-router";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router";
+import { useMutation } from "@tanstack/react-query";
+import { useAuth } from "@/contexts/auth-context";
+import { authRegister } from "@/lib/api";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 
 export function RegisterPage() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { mutate, isPending, error } = useMutation({
+    mutationFn: () => authRegister(username, email, password),
+    onSuccess: (data) => {
+      login(data);
+      navigate("/");
+    },
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    mutate();
+  }
+
   return (
     <main className="max-w-md mx-auto px-4 py-16">
       <div className="border-2 border-foreground retro-shadow p-8 flex flex-col gap-6">
@@ -11,40 +36,51 @@ export function RegisterPage() {
           </p>
         </header>
 
-        <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
-          <div className="flex flex-col gap-1">
-            <label className="font-retro text-xs font-bold">USERNAME</label>
-            <input
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <Field>
+            <FieldLabel className="font-retro text-xs font-bold">USERNAME</FieldLabel>
+            <Input
               type="text"
               placeholder="CoolAppleFan"
-              className="border-2 border-foreground px-3 py-2 text-sm font-retro bg-background focus:outline-none focus:border-[var(--retro-accent)] transition-colors"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
             />
-          </div>
+          </Field>
 
-          <div className="flex flex-col gap-1">
-            <label className="font-retro text-xs font-bold">EMAIL</label>
-            <input
+          <Field>
+            <FieldLabel className="font-retro text-xs font-bold">EMAIL</FieldLabel>
+            <Input
               type="email"
               placeholder="vous@example.com"
-              className="border-2 border-foreground px-3 py-2 text-sm font-retro bg-background focus:outline-none focus:border-[var(--retro-accent)] transition-colors"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
-          </div>
+          </Field>
 
-          <div className="flex flex-col gap-1">
-            <label className="font-retro text-xs font-bold">MOT DE PASSE</label>
-            <input
+          <Field>
+            <FieldLabel className="font-retro text-xs font-bold">MOT DE PASSE</FieldLabel>
+            <Input
               type="password"
               placeholder="••••••••"
-              className="border-2 border-foreground px-3 py-2 text-sm font-retro bg-background focus:outline-none focus:border-[var(--retro-accent)] transition-colors"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
-          </div>
+          </Field>
+
+          {error && (
+            <FieldError errors={[error.message]} className="font-retro text-xs" />
+          )}
 
           <button
             type="submit"
-            className="mt-2 border-2 border-foreground py-2 font-retro font-bold text-sm retro-shadow-accent hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all"
+            disabled={isPending}
+            className="mt-2 border-2 border-foreground py-2 font-retro font-bold text-sm retro-shadow-accent hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-x-0 disabled:translate-y-0"
             style={{ background: "var(--retro-accent)" }}
           >
-            CRÉER UN COMPTE →
+            {isPending ? "CRÉATION..." : "CRÉER UN COMPTE →"}
           </button>
         </form>
 
