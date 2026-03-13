@@ -1,0 +1,35 @@
+{
+  "_id": { "$oid": "507f1f77bcf86cd799439015" },
+  "title": "Problème Face ID iPhone 14",
+  "author": {
+    "_id": { "$oid": "507f1f77bcf86cd799439016" },
+    "username": "tech_support"
+  },
+  "score": 23,
+  "createdAt": { "$date": "2026-03-11T14:20:00.000Z" },
+  "lastMessageAt": { "$date": "2026-03-12T11:20:00.000Z" },
+  "messages": [
+    {
+      "_id": { "$oid": "507f1f77bcf86cd799439017" },
+      "author": {
+        "_id": { "$oid": "507f1f77bcf86cd799439011" },
+        "username": "john_doe"
+      },
+      "content": "Mon Face ID ne fonctionne plus après la mise à jour...",
+      "score": 7,
+      "createdAt": { "$date": "2026-03-11T14:25:00.000Z" },
+      "updatedAt": { "$date": "2026-03-11T14:25:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "507f1f77bcf86cd799439018" },
+      "author": {
+        "_id": { "$oid": "507f1f77bcf86cd799439016" },
+        "username": "tech_support"
+      },
+      "content": "Essayez de redémarrer en mode récupération...",
+      "score": 12,
+      "createdAt": { "$date": "2026-03-11T14:30:00.000Z" },
+      "updatedAt": { "$date": "2026-03-11T14:30:00.000Z" }
+    }
+  ]
+}

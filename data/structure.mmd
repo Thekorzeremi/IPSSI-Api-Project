@@ -1,0 +1,49 @@
+erDiagram
+    USERS {
+        ObjectId _id
+        string username
+        string password
+        date createdAt
+        date updatedAt
+        array roles
+        int reputation
+        boolean newsletter
+    }
+    
+    ARTICLES {
+        ObjectId _id
+        string title
+        object author
+        string image
+        string content
+        int score
+        string status
+        date createdAt
+        date updatedAt
+        array comments
+    }
+    
+    THREADS {
+        ObjectId _id
+        string title
+        object author
+        int score
+        date createdAt
+        date lastMessageAt
+        array messages
+    }
+    
+    EVENTS {
+        ObjectId _id
+        date createdAt
+        string message
+        string url
+        ObjectId userId
+    }
+    
+    ARTICLES ||--o{ COMMENTS : contains
+    THREADS ||--o{ MESSAGES : contains
+    
+    USERS ||--o{ ARTICLES : authored
+    USERS ||--o{ THREADS : authored
+    USERS }|--|| EVENTS : created

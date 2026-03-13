@@ -1,0 +1,27 @@
+{
+  "_id": { "$oid": "507f1f77bcf86cd799439012" },
+  "title": "iPhone 15 Pro Max Review",
+  "author": {
+    "_id": { "$oid": "507f1f77bcf86cd799439011" },
+    "username": "john_doe"
+  },
+  "image": "https://example.com/iphone15.jpg",
+  "content": "Analyse complète du dernier iPhone...",
+  "score": 42,
+  "status": "approved",
+  "createdAt": { "$date": "2026-03-12T09:30:00.000Z" },
+  "updatedAt": { "$date": "2026-03-12T10:15:00.000Z" },
+  "comments": [
+    {
+      "_id": { "$oid": "507f1f77bcf86cd799439013" },
+      "author": {
+        "_id": { "$oid": "507f1f77bcf86cd799439014" },
+        "username": "jane_smith"
+      },
+      "content": "Excellente review !",
+      "score": 8,
+      "createdAt": { "$date": "2026-03-12T09:45:00.000Z" },
+      "updatedAt": { "$date": "2026-03-12T09:45:00.000Z" }
+    }
+  ]
+}
