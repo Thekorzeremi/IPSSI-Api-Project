@@ -19,6 +19,12 @@ export function Navbar() {
             HOME
           </Link>
           <Link
+            to="/threads"
+            className="font-retro text-sm px-3 py-1 border-2 border-transparent hover:border-foreground hover:retro-shadow transition-all"
+          >
+            THREADS
+          </Link>
+          <Link
             to="/login"
             className="font-retro text-sm px-3 py-1 border-2 border-transparent hover:border-foreground hover:retro-shadow transition-all"
           >
