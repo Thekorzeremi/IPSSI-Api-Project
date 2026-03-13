@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-const createUserSchema = Joi.object({
+const registerSchema = Joi.object({
   username: Joi.string().trim().required().messages({
     "string.empty": "Le nom d'utilisateur est requis.",
     "any.required": "Le nom d'utilisateur est requis.",
@@ -20,12 +20,16 @@ const createUserSchema = Joi.object({
   }).default({}),
 });
 
-const updateUserSchema = Joi.object({
-  username: Joi.string().trim(),
-  email: Joi.string().email().lowercase(),
-  settings: Joi.object({
-    newsletter: Joi.boolean(),
+const loginSchema = Joi.object({
+  email: Joi.string().email().lowercase().required().messages({
+    "string.empty": "L'email est requis.",
+    "any.required": "L'email est requis.",
+    "string.email": "L'email doit être une adresse email valide.",
   }),
-}).min(1);
+  password: Joi.string().required().messages({
+    "string.empty": "Le mot de passe est requis.",
+    "any.required": "Le mot de passe est requis.",
+  }),
+});
 
-module.exports = { createUserSchema, updateUserSchema };
+module.exports = { registerSchema, loginSchema };

@@ -25,4 +25,11 @@ const addCommentSchema = Joi.object({
   }),
 });
 
-module.exports = { createArticleSchema, addCommentSchema };
+const updateArticleSchema = Joi.object({
+  title: Joi.string().trim(),
+  image: Joi.string().uri(),
+  content: Joi.string(),
+  status: Joi.string().valid("created", "removed", "drafted", "published", "approved"),
+}).min(1);
+
+module.exports = { createArticleSchema, addCommentSchema, updateArticleSchema };

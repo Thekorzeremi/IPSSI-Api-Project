@@ -14,4 +14,9 @@ const addMessageSchema = Joi.object({
   }),
 });
 
-module.exports = { createThreadSchema, addMessageSchema };
+const updateThreadSchema = Joi.object({
+  title: Joi.string().trim(),
+  lastMessageAt: Joi.date(),
+}).min(1);
+
+module.exports = { createThreadSchema, addMessageSchema, updateThreadSchema };
