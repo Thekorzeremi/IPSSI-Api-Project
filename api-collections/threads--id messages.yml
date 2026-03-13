@@ -1,0 +1,26 @@
+info:
+  name: /threads/:id/messages
+  type: http
+  seq: 20
+
+http:
+  method: POST
+  url: http://localhost:3000/api/threads/:id/messages
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer TOKEN
+  body:
+    type: json
+    data: |-
+      {
+        "content": "J'ai le meme probleme"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

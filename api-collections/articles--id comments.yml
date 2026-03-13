@@ -1,0 +1,26 @@
+info:
+  name: /articles/:id/comments
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: http://localhost:3000/api/articles/:id/comments
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer TOKEN
+  body:
+    type: json
+    data: |-
+      {
+        "content": "Super article !"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

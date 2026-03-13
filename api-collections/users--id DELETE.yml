@@ -1,0 +1,20 @@
+info:
+  name: /users/:id DELETE
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: http://localhost:3000/api/users/69b3f5a39be20cf6df28d065
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: 
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

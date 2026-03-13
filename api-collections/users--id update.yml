@@ -1,0 +1,29 @@
+info:
+  name: /users/:id update
+  type: http
+  seq: 8
+
+http:
+  method: PATCH
+  url: http://localhost:3000/api/users/69b3f5a39be20cf6df28d065
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: 
+  body:
+    type: json
+    data: |-
+      {
+        "username": "jane_smith_updated",
+        "settings": {
+          "newsletter": true
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
