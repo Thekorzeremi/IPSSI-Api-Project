@@ -1,0 +1,29 @@
+info:
+  name: /auth/register
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3000/api/auth/register
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "username": "john_doe",
+        "email": "john@doe.com",
+        "password": "password123",
+        "settings": {
+          "newsletter": true
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

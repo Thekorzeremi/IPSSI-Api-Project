@@ -1,0 +1,26 @@
+info:
+  name: /auth/register invalid
+  type: http
+  seq: 25
+
+http:
+  method: POST
+  url: http://localhost:3000/api/auth/register
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "username": "",
+        "email": "bad-email",
+        "password": "123"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

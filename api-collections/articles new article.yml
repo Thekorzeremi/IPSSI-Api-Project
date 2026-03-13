@@ -1,0 +1,29 @@
+info:
+  name: /articles new article
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: http://localhost:3000/api/articles
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer TOKEN
+  body:
+    type: json
+    data: |-
+      {
+        "title": "iPhone 16 test",
+        "image": "https://example.com/iphone16.jpg",
+        "content": "Article de test",
+        "status": "created"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

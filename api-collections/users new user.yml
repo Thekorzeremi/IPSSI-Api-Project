@@ -1,0 +1,31 @@
+info:
+  name: /users new user
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: http://localhost:3000/api/users
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: 
+  body:
+    type: json
+    data: |-
+      {
+        "username": "jane_smith",
+        "email": "jane@smith.com",
+        "password": "password123",
+        "settings": {
+          "newsletter": false
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
