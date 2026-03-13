@@ -7,5 +7,5 @@ const app = express();
 connectDB();
 
 app.listen(process.env.API_PORT, () => {
-    console.log("Serveur démarré sur le port 3000");
+    console.log("Serveur démarré sur le port " + process.env.API_PORT);
 });
