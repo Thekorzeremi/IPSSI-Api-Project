@@ -28,6 +28,12 @@ export function Navbar() {
             HOME
           </Link>
           <Link
+            to="/articles"
+            className="font-retro text-sm px-3 py-1 border-2 border-transparent hover:border-foreground hover:retro-shadow transition-all"
+          >
+            ARTICLES
+          </Link>
+          <Link
             to="/threads"
             className="font-retro text-sm px-3 py-1 border-2 border-transparent hover:border-foreground hover:retro-shadow transition-all"
           >
@@ -35,7 +41,7 @@ export function Navbar() {
           </Link>
           {user ? (
             <>
-              <span className="font-retro text-xs text-muted-foreground px-2">
+              <span className="font-retro mr-2 text-xs text-muted-foreground px-2">
                 @{user.username}
               </span>
               <button

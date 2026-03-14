@@ -40,7 +40,7 @@ export function ArticleDetailPage() {
     <main className="max-w-3xl mx-auto px-4 py-8">
       <button
         onClick={() => navigate(-1)}
-        className="font-retro text-xs border-2 border-foreground px-3 py-1 mb-6 hover:retro-shadow transition-all inline-block"
+        className="font-retro text-xs border-2 border-foreground px-3 py-1 mb-6 hover:retro-shadow transition-all inline-block hover:cursor-pointer"
       >
         ← RETOUR
       </button>

@@ -19,10 +19,10 @@ export function ThreadsPage() {
   const { data: threads, isLoading, isError } = useThreads();
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8">
+    <main className="max-w-5xl mx-auto px-4 py-8">
       <header className="mb-8 border-b-2 border-foreground pb-4">
         <h1 className="font-retro font-bold text-3xl tracking-tight">
-          THREADS
+          TOUS LES THREADS
         </h1>
         <p className="text-muted-foreground text-sm mt-1 font-retro">
           {`// discussions & entraide`}
