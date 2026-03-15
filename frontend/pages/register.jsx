@@ -14,7 +14,7 @@ export function RegisterPage() {
   const [password, setPassword] = useState("");
 
   const { mutate, isPending, error } = useMutation({
-    mutationFn: () => authRegister(username, email, password),
+    mutationFn: () => authRegister(username, email, password, false),
     onSuccess: (data) => {
       login(data);
       navigate("/");

@@ -59,9 +59,7 @@ export function ThreadDetailPage() {
           <span className="font-retro text-xs text-muted-foreground">
             @{thread.author}
           </span>
-          <span className="font-retro text-xs text-muted-foreground">
-            {date}
-          </span>
+          <span className="font-retro text-xs text-muted-foreground">{date}</span>
           <span className="font-retro text-xs text-muted-foreground border border-foreground px-1">
             {thread.messages.length} messages
           </span>

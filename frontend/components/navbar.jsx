@@ -46,7 +46,7 @@ export function Navbar() {
               </span>
               <button
                 onClick={handleLogout}
-                className="font-retro text-sm px-3 py-1 border-2 border-foreground retro-shadow bg-(--retro-accent) text-foreground font-bold"
+                className="font-retro text-sm px-3 py-1 border-2 border-foreground retro-shadow bg-(--retro-accent) text-foreground font-bold hover:cursor-pointer"
               >
                 LOGOUT
               </button>

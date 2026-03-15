@@ -22,5 +22,9 @@ const api = ky.create({
 export const authLogin = (email, password) =>
   api.post("auth/login", { json: { email, password } }).json();
 
-export const authRegister = (username, email, password) =>
-  api.post("auth/register", { json: { username, email, password } }).json();
+export const authRegister = (username, email, password, newsletter) =>
+  api
+    .post("auth/register", {
+      json: { username, email, password, settings: { newsletter } },
+    })
+    .json();
