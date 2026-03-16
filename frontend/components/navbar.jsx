@@ -41,9 +41,12 @@ export function Navbar() {
           </Link>
           {user ? (
             <>
-              <span className="font-retro mr-2 text-xs text-muted-foreground px-2">
+              <Link
+                to="/profile"
+                className="font-retro mr-2 text-xs text-muted-foreground px-2"
+              >
                 @{user.username}
-              </span>
+              </Link>
               <button
                 onClick={handleLogout}
                 className="font-retro text-sm px-3 py-1 border-2 border-foreground retro-shadow bg-(--retro-accent) text-foreground font-bold hover:cursor-pointer"

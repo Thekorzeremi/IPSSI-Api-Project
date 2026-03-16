@@ -10,7 +10,7 @@ http:
     - name: Content-Type
       value: application/json
     - name: Authorization
-      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OWIzZWY5NTRmYTBlY2E4YzZhZGM0NjkiLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzczNTA0NjkyLCJleHAiOjE3NzM1MDgyOTJ9.5Us_e9li_1vKpaCL5qAWFxHZBZhYKAFQR33G3gDkr1M
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OWIzZWY5NTRmYTBlY2E4YzZhZGM0NjkiLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzczNTgzMjc1LCJleHAiOjE3NzM1ODY4NzV9.7NADPbJnX9ZT40eZmPcPDOkQemZl-Cw1SnDksdoz1vE
   auth: inherit
 
 settings:

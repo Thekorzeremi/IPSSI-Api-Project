@@ -28,3 +28,11 @@ export const authRegister = (username, email, password, newsletter) =>
       json: { username, email, password, settings: { newsletter } },
     })
     .json();
+
+export const updateUserById = (id, payload, token) =>
+  api
+    .patch(`users/${id}`, {
+      json: payload,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .json();

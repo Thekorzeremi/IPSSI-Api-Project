@@ -7,6 +7,7 @@ import { RegisterPage } from "@/pages/register";
 import { ArticlePage } from "@/pages/article";
 import { ThreadsPage } from "@/pages/threads";
 import { ThreadDetailPage } from "@/pages/thread-detail";
+import { ProfilePage } from "@/pages/profile";
 
 export function App() {
 	return (
@@ -20,6 +21,7 @@ export function App() {
 				<Route path="/threads/:id" element={<ThreadDetailPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/register" element={<RegisterPage />} />
+				<Route path="/profile" element={<ProfilePage />} />
 			</Routes>
 		</>
 	);
